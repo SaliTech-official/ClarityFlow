@@ -6,7 +6,7 @@ ClarityFlow is a clean and responsive personal finance tracker web application b
 
 ![ClarityFlow Screenshot](/Preview/Preview1.png)
 
-![ClarityFlow Screenshot](path/to/screenshot.png)
+![ClarityFlow Screenshot](/Preview/Preview2.png)
 
 ![ClarityFlow Screenshot](path/to/screenshot.png)
 
