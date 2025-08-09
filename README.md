@@ -2,14 +2,6 @@
 
 ClarityFlow is a clean and responsive personal finance tracker web application built with React and Tailwind CSS. It enables users to easily add, view, and manage their income and expenses with real-time balance updates and insightful visual charts. Data is stored locally to ensure persistence across sessions.
 
-## Preview
-
-![ClarityFlow Screenshot](/Preview/Preview1.png)
-
-![ClarityFlow Screenshot](/Preview/Preview2.png)
-
-![ClarityFlow Screenshot](/Preview/Preview3.png)
-
 ## Features
 
 - Add income and expense transactions with description, amount, and optional date  
@@ -48,6 +40,14 @@ To run ClarityFlow locally, follow these steps:
 ## State Management
 
 The application uses React's built-in Hooks (`useState`) for managing the state in a simple and straightforward manner, making it easy to follow and maintain.
+
+## Preview
+
+![ClarityFlow Screenshot](/Preview/Preview1.png)
+
+![ClarityFlow Screenshot](/Preview/Preview2.png)
+
+![ClarityFlow Screenshot](/Preview/Preview3.png)
 
 ## Future Updates
 
