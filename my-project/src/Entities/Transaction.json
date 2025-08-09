@@ -1,0 +1,40 @@
+{
+    "name": "Transaction",
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "Description of the transaction"
+      },
+      "amount": {
+        "type": "number",
+        "description": "Transaction amount (positive for income, negative for expenses)"
+      },
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "Transaction date"
+      },
+      "category": {
+        "type": "string",
+        "enum": [
+          "food",
+          "transport",
+          "entertainment",
+          "utilities",
+          "healthcare",
+          "shopping",
+          "salary",
+          "freelance",
+          "investment",
+          "other"
+        ],
+        "default": "other",
+        "description": "Transaction category"
+      }
+    },
+    "required": [
+      "description",
+      "amount"
+    ]
+  }

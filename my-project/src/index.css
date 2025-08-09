@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* stylelint-disable at-rule-no-unknown */
+/* Tailwind v4 theme tokens */
+@theme {
+  --color-background: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-text: #2E2E2E;
+  --color-accent: #00A86B;
+  --color-negative: #EF4444;
+  --color-positive: #10B981;
+  --color-muted: #6B7280;
+}
+/* stylelint-enable at-rule-no-unknown */
+
