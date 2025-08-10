@@ -39,3 +39,35 @@
   --color-positive-muted: #052E1B;  /* emerald-950 */
   --color-negative-muted: #3F0D0D;  /* rose-950 */
 }
+
+/* Themed shadow tokens */
+:root {
+  --shadow-color: rgba(0, 0, 0, 0.16);
+  --shadow-color-strong: rgba(0, 0, 0, 0.16);
+}
+.dark {
+  --shadow-color: rgba(255, 255, 255, 0.16);
+  --shadow-color-strong: rgba(255, 255, 255, 0.16);
+}
+
+/* Utility classes for consistent, theme-aware shadows */
+.shadow-elev-sm {
+  box-shadow: 0 2px 8px -2px var(--shadow-color);
+}
+.shadow-elev {
+  box-shadow: 0 6px 12px -8px var(--shadow-color), 0 2px 6px -2px var(--shadow-color);
+}
+.shadow-elev-lg {
+  box-shadow: 0 14px 16px -16px var(--shadow-color-strong), 0 4px 12px -6px var(--shadow-color);
+}
+
+/* Support Tailwind-like hover: variant for custom shadows */
+.hover\:shadow-elev-sm:hover {
+  box-shadow: 0 2px 8px -2px var(--shadow-color);
+}
+.hover\:shadow-elev:hover {
+  box-shadow: 0 8px 24px -8px var(--shadow-color), 0 2px 6px -2px var(--shadow-color);
+}
+.hover\:shadow-elev-lg:hover {
+  box-shadow: 0 8px 12px -8px var(--shadow-color-strong), 0 4px 12px -6px var(--shadow-color);
+}
