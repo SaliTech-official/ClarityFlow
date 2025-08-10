@@ -78,7 +78,7 @@ export default function ClarityFlow() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <div className="bg-accent p-3 rounded-2xl shadow-lg">
+                <div className="bg-accent p-3 rounded-2xl shadow-elev">
                 <Wallet className="w-8 h-8 text-white" />
               </div>
               <div>
