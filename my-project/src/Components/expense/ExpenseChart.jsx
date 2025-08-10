@@ -41,7 +41,7 @@ export default function ExpenseChart({ transactions }) {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-surface p-3 border border-border rounded-lg shadow-lg">
+        <div className="bg-surface p-3 border border-border rounded-lg shadow-elev">
           <p className="font-semibold capitalize text-text">{`${label}`}</p>
           {payload.map((pld, index) => (
             <p key={index} style={{ color: pld.color }}>
@@ -56,7 +56,7 @@ export default function ExpenseChart({ transactions }) {
 
   if (transactions.length === 0) {
     return (
-      <div className="bg-surface backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 text-center shadow-xl border border-border/20">
+      <div className="bg-surface backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 text-center shadow-elev-lg border border-border/20">
         <div className="bg-surface-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
           <BarChart3 className="w-8 h-8 text-muted" />
         </div>
@@ -72,7 +72,7 @@ export default function ExpenseChart({ transactions }) {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-surface rounded-2xl p-6 shadow-xl border border-border"
+        className="bg-surface rounded-2xl p-6 shadow-elev-lg border border-border"
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-accent p-3 rounded-xl">
@@ -128,7 +128,7 @@ export default function ExpenseChart({ transactions }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.1 }}
-        className="bg-surface rounded-2xl p-6 shadow-xl border border-border"
+        className="bg-surface rounded-2xl p-6 shadow-elev-lg border border-border"
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-accent p-3 rounded-xl">
