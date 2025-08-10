@@ -48,7 +48,7 @@ export default function Summary({ transactions }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className={`${card.bgColor} rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300`}
+          className={`${card.bgColor} rounded-2xl p-6 border border-border shadow-elev hover:shadow-elev-lg transition-all duration-300`}
         >
           <div className="flex items-center justify-between">
             <div>
