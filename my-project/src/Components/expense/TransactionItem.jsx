@@ -37,9 +37,9 @@ export default function TransactionItem({ transaction, onDelete, index }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
       transition={{ delay: index * 0.05 }}
-      className={`bg-surface rounded-xl p-5 shadow-lg border-l-4 ${
+      className={`bg-surface rounded-xl p-5 shadow-elev border-l-4 ${
         isIncome ? 'border-positive' : 'border-negative'
-      } hover:shadow-xl transition-all duration-300 group`}
+      } hover:shadow-elev-lg transition-all duration-300 group`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 flex-1">
