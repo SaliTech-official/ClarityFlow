@@ -13,6 +13,7 @@ ClarityFlow is a clean and responsive personal finance tracker web application b
 - Fully responsive design optimized for desktop and mobile  
 - Clean and modular codebase with React Hooks for state management  
 - Styled elegantly using Tailwind CSS utility classes  
+- **Dark Mode support** with smooth theme switching for a better user experience in all lighting conditions  
 
 ## Installation and Setup
 
@@ -49,6 +50,12 @@ The application uses React's built-in Hooks (`useState`) for managing the state 
 
 ![ClarityFlow Screenshot](/Preview/Preview3.png)
 
+![ClarityFlow Screenshot](/Preview/Preview4.png)
+
+![ClarityFlow Screenshot](/Preview/Preview5.png)
+
+![ClarityFlow Screenshot](/Preview/Preview6.png)
+
 ## Future Updates
 
 Exciting updates and new features are planned to enhance ClarityFlow's functionality and user experience.
@@ -58,6 +65,7 @@ Exciting updates and new features are planned to enhance ClarityFlow's functiona
 - LocalStorage is used to persist data between sessions without the need for a backend.  
 - Interactive charts provide a clear visual representation of income and expenses.  
 - Tailwind CSS ensures a clean, modern, and responsive UI.  
+- **Dark Mode implementation** using Tailwind’s built-in dark variant for effortless theme toggling and consistent design across themes.  
 
 ---
 
