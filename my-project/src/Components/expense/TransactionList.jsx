@@ -6,7 +6,7 @@ import { Receipt, TrendingUp } from 'lucide-react';
 export default function TransactionList({ transactions, onDeleteTransaction }) {
   if (transactions.length === 0) {
     return (
-      <div className="bg-surface rounded-2xl p-12 text-center shadow-xl border border-border">
+      <div className="bg-surface rounded-2xl p-12 text-center shadow-elev-lg border border-border">
         <div className="bg-surface-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
           <Receipt className="w-8 h-8 text-muted" />
         </div>
