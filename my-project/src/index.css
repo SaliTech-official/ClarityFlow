@@ -3,6 +3,7 @@
 /* stylelint-disable at-rule-no-unknown */
 /* Tailwind v4 theme tokens */
 @theme {
+  /* Base colors */
   --color-background: #F5F7FA;
   --color-surface: #FFFFFF;
   --color-text: #2E2E2E;
@@ -10,6 +11,31 @@
   --color-negative: #EF4444;
   --color-positive: #10B981;
   --color-muted: #6B7280;
+
+  /* Extended semantic tokens */
+  --color-border: #E5E7EB;           /* gray-200 */
+  --color-surface-muted: #F3F4F6;    /* gray-100 */
+  --color-positive-muted: #ECFDF5;   /* emerald-50 */
+  --color-negative-muted: #FEF2F2;   /* rose-50 */
 }
 /* stylelint-enable at-rule-no-unknown */
 
+/* Prefer correct native control styling per theme */
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+/* Dark mode overrides via class strategy */
+.dark {
+  --color-background: #0B0F14;      /* near-black with slight blue */
+  --color-surface: #111827;         /* gray-900 */
+  --color-text: #E5E7EB;            /* gray-200 */
+  --color-accent: #00A86B;          /* keep brand */
+  --color-negative: #EF4444;        /* red-500 */
+  --color-positive: #10B981;        /* emerald-500 */
+  --color-muted: #9CA3AF;           /* gray-400 */
+
+  --color-border: #1F2937;          /* gray-800 */
+  --color-surface-muted: #0F172A;   /* slate-900 */
+  --color-positive-muted: #052E1B;  /* emerald-950 */
+  --color-negative-muted: #3F0D0D;  /* rose-950 */
+}

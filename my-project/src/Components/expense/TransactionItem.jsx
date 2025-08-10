@@ -37,14 +37,14 @@ export default function TransactionItem({ transaction, onDelete, index }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
       transition={{ delay: index * 0.05 }}
-      className={`bg-white rounded-xl p-5 shadow-lg border-l-4 ${
+      className={`bg-surface rounded-xl p-5 shadow-lg border-l-4 ${
         isIncome ? 'border-positive' : 'border-negative'
       } hover:shadow-xl transition-all duration-300 group`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 flex-1">
           <div className={`p-3 rounded-xl ${
-            isIncome ? 'bg-emerald-50' : 'bg-rose-50'
+            isIncome ? 'bg-positive-muted' : 'bg-negative-muted'
           }`}>
             <span className="text-xl">
               {categoryEmojis[transaction.category] || '📦'}
@@ -86,7 +86,7 @@ export default function TransactionItem({ transaction, onDelete, index }) {
             variant="ghost"
             size="icon"
             onClick={() => onDelete(transaction.id)}
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-rose-50 hover:text-negative rounded-xl"
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-negative-muted hover:text-negative rounded-xl"
           >
             <Trash2 className="w-4 h-4" />
           </Button>

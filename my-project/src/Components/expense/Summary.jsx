@@ -19,24 +19,24 @@ export default function Summary({ transactions }) {
       amount: balance,
       icon: Wallet,
       color: balance >= 0 ? 'text-positive' : 'text-negative',
-      bgColor: 'bg-white',
-      iconBg: balance >= 0 ? 'bg-emerald-50' : 'bg-rose-50',
+      bgColor: 'bg-surface',
+      iconBg: balance >= 0 ? 'bg-positive-muted' : 'bg-negative-muted',
     },
     {
       title: 'Income',
       amount: totalIncome,
       icon: TrendingUp,
       color: 'text-positive',
-      bgColor: 'bg-white',
-      iconBg: 'bg-emerald-50',
+      bgColor: 'bg-surface',
+      iconBg: 'bg-positive-muted',
     },
     {
       title: 'Expenses',
       amount: totalExpenses,
       icon: TrendingDown,
       color: 'text-negative',
-      bgColor: 'bg-white',
-      iconBg: 'bg-rose-50',
+      bgColor: 'bg-surface',
+      iconBg: 'bg-negative-muted',
     },
   ];
 
@@ -48,7 +48,7 @@ export default function Summary({ transactions }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className={`${card.bgColor} rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300`}
+          className={`${card.bgColor} rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300`}
         >
           <div className="flex items-center justify-between">
             <div>

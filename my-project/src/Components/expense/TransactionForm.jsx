@@ -17,7 +17,7 @@ function Input(props) {
   const { className = '', ...rest } = props;
   return (
     <input
-      className={`w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-accent focus:ring-accent ${className}`}
+      className={`w-full px-3 py-2 border border-border rounded-xl bg-surface text-text placeholder:text-muted focus:border-accent focus:ring-accent ${className}`}
       {...rest}
     />
   );
@@ -36,7 +36,7 @@ function Select({ value, onValueChange, children }) {
     <select
       value={value}
       onChange={(e) => onValueChange(e.target.value)}
-      className="w-full px-3 py-2 border border-gray-200 rounded-xl focus:border-accent focus:ring-accent"
+      className="w-full px-3 py-2 border border-border rounded-xl bg-surface text-text focus:border-accent focus:ring-accent"
     >
       {children}
     </select>
@@ -101,7 +101,7 @@ export default function TransactionForm({ onAddTransaction }) {
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 shadow-xl border border-white border-opacity-20 mb-8"
+      className="bg-surface backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 shadow-xl border border-border/20 mb-8"
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="bg-accent p-3 rounded-xl">
@@ -122,7 +122,7 @@ export default function TransactionForm({ onAddTransaction }) {
               placeholder="What was this transaction for?"
               value={formData.description}
               onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
-               className="border-gray-200 focus:border-accent focus:ring-accent rounded-xl h-12"
+               className="focus:border-accent focus:ring-accent rounded-xl h-12"
               required
             />
           </div>
@@ -140,7 +140,7 @@ export default function TransactionForm({ onAddTransaction }) {
                 placeholder="0.00"
                 value={formData.amount}
                 onChange={(e) => setFormData(prev => ({ ...prev, amount: e.target.value }))}
-                 className="pl-10 border-gray-200 focus:border-accent focus:ring-accent rounded-xl h-12"
+                 className="pl-10 focus:border-accent focus:ring-accent rounded-xl h-12"
                 required
               />
             </div>
@@ -159,7 +159,7 @@ export default function TransactionForm({ onAddTransaction }) {
               value={formData.category}
               onValueChange={(value) => setFormData(prev => ({ ...prev, category: value }))}
             >
-                <SelectTrigger className="rounded-xl h-12 border-gray-200">
+                <SelectTrigger className="rounded-xl h-12 border-border">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -192,7 +192,7 @@ export default function TransactionForm({ onAddTransaction }) {
         <Button
           type="submit"
           disabled={isSubmitting || !formData.description || !formData.amount}
-          className="w-full bg-accent hover:bg-emerald-700 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-accent hover:brightness-90 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <div className="flex items-center gap-2">

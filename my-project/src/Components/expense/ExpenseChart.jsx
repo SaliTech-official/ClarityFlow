@@ -14,8 +14,8 @@ export default function ExpenseChart({ transactions }) {
 
   // Data for pie chart
   const pieData = [
-    { name: 'Income', value: totalIncome, color: '#10B981' },
-    { name: 'Expenses', value: totalExpenses, color: '#EF4444' }
+    { name: 'Income', value: totalIncome, color: 'var(--color-positive)' },
+    { name: 'Expenses', value: totalExpenses, color: 'var(--color-negative)' }
   ].filter(item => item.value > 0);
 
   // Data for category breakdown
@@ -41,8 +41,8 @@ export default function ExpenseChart({ transactions }) {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
-          <p className="font-semibold capitalize">{`${label}`}</p>
+        <div className="bg-surface p-3 border border-border rounded-lg shadow-lg">
+          <p className="font-semibold capitalize text-text">{`${label}`}</p>
           {payload.map((pld, index) => (
             <p key={index} style={{ color: pld.color }}>
               {`${pld.dataKey}: $${pld.value.toFixed(2)}`}
@@ -56,12 +56,12 @@ export default function ExpenseChart({ transactions }) {
 
   if (transactions.length === 0) {
     return (
-      <div className="bg-white backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 text-center shadow-xl border border-white border-opacity-20">
-        <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-          <BarChart3 className="w-8 h-8 text-gray-400" />
+      <div className="bg-surface backdrop-blur-sm bg-opacity-80 rounded-2xl p-8 text-center shadow-xl border border-border/20">
+        <div className="bg-surface-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <BarChart3 className="w-8 h-8 text-muted" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-700 mb-2">No data to display</h3>
-        <p className="text-gray-500">Add some transactions to see your financial insights.</p>
+        <h3 className="text-xl font-semibold text-text mb-2">No data to display</h3>
+        <p className="text-muted">Add some transactions to see your financial insights.</p>
       </div>
     );
   }
@@ -72,7 +72,7 @@ export default function ExpenseChart({ transactions }) {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100"
+        className="bg-surface rounded-2xl p-6 shadow-xl border border-border"
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-accent p-3 rounded-xl">
@@ -95,18 +95,18 @@ export default function ExpenseChart({ transactions }) {
                   dataKey="value"
                 >
                   {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
+                    <Cell key={`cell-${index}`} fill={entry.color} stroke={entry.color}/>
                   ))}
                 </Pie>
                 <Tooltip
                   formatter={(value) => [`$${value.toFixed(2)}`]}
-                  labelStyle={{ color: '#374151' }}
+                  labelStyle={{ color: 'var(--color-text)' }}
                 />
               </PieChart>
             </ResponsiveContainer>
           </div>
         ) : (
-          <div className="h-64 flex items-center justify-center text-gray-500">
+          <div className="h-64 flex items-center justify-center text-muted">
             No data available
           </div>
         )}
@@ -128,7 +128,7 @@ export default function ExpenseChart({ transactions }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.1 }}
-        className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100"
+        className="bg-surface rounded-2xl p-6 shadow-xl border border-border"
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="bg-accent p-3 rounded-xl">
@@ -141,22 +141,22 @@ export default function ExpenseChart({ transactions }) {
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={categoryChartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
                 <XAxis 
                   dataKey="name" 
-                  tick={{ fontSize: 12, fill: '#6B7280' }}
+                  tick={{ fontSize: 12, fill: 'var(--color-muted)' }}
                   tickFormatter={(value) => value.charAt(0).toUpperCase() + value.slice(1)}
                 />
-                <YAxis tick={{ fontSize: 12, fill: '#6B7280' }} />
+                <YAxis tick={{ fontSize: 12, fill: 'var(--color-muted)' }} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Bar dataKey="income" fill="#10B981" name="Income" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="expenses" fill="#EF4444" name="Expenses" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="income" fill="var(--color-positive)" name="Income" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="expenses" fill="var(--color-negative)" name="Expenses" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         ) : (
-          <div className="h-64 flex items-center justify-center text-gray-500">
+          <div className="h-64 flex items-center justify-center text-muted">
             No category data available
           </div>
         )}

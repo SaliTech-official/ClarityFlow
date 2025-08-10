@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Transaction } from '@/Entities/Transaction';
 import { motion } from 'framer-motion';
-import { Wallet, Sparkles } from 'lucide-react';
+import { Wallet, Sparkles, Sun, Moon } from 'lucide-react';
 
 import Summary from '@/Components/expense/Summary';
 import TransactionForm from '@/Components/expense/TransactionForm';
@@ -45,6 +45,17 @@ export default function ClarityFlow() {
     }
   };
 
+  // Theme toggle
+  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    const root = document.documentElement;
+    root.classList.toggle('dark', next);
+    root.style.colorScheme = next ? 'dark' : 'light';
+    try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch {}
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -57,17 +68,17 @@ export default function ClarityFlow() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white bg-opacity-40 backdrop-blur-lg border-b border-white border-opacity-20 sticky top-0 z-10"
+          className="bg-surface/40 backdrop-blur-lg border-b border-border/20 sticky top-0 z-10"
       >
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="bg-accent p-3 rounded-2xl shadow-lg">
+                <div className="bg-accent p-3 rounded-2xl shadow-lg">
                 <Wallet className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -77,10 +88,20 @@ export default function ClarityFlow() {
                 <p className="text-muted font-medium">Take control of your financial journey</p>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-2 bg-white bg-opacity-60 px-4 py-2 rounded-full">
-              <Sparkles className="w-5 h-5 text-yellow-500" />
-              <span className="text-sm font-semibold text-text">Premium Experience</span>
-            </div>
+              <div className="hidden md:flex items-center gap-3">
+                <div className="flex items-center gap-2 bg-surface/60 px-4 py-2 rounded-full border border-border/20">
+                  <Sparkles className="w-5 h-5 text-yellow-500" />
+                  <span className="text-sm font-semibold text-text">Premium Experience</span>
+                </div>
+                <button
+                  aria-label="Toggle theme"
+                  onClick={toggleTheme}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-text hover:brightness-95 transition"
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  <span className="hidden sm:inline">{isDark ? 'Light' : 'Dark'} mode</span>
+                </button>
+              </div>
           </div>
         </div>
       </motion.header>
@@ -125,7 +146,7 @@ export default function ClarityFlow() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white bg-opacity-40 backdrop-blur-lg border-t border-white border-opacity-20 mt-16">
+      <footer className="bg-surface/40 backdrop-blur-lg border-t border-border/20 mt-16">
         <div className="max-w-7xl mx-auto px-6 py-8 text-center">
           <p className="text-muted">
             Built with ❤️ for better financial management
